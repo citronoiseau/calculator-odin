@@ -5,44 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       src="https://kit.fontawesome.com/11fccbb6d3.js"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
   </head>
   <body>
     <h1>Hi I am calculator</h1>
+
     <div class="calculator">
       <div class="screens">
-        <div class="previousOperation">55 +</div>
-        <div class="currentOperation">5</div>
+        <div class="previousOperation"></div>
+        <div class="currentOperation"><span class="cursor">|</span></div>
       </div>
       <div class="calculator-buttons">
         <button class="clearBtn">AC</button>
-        <button class="operator">( )</button>
-        <button class="operator"><i class="fa-solid fa-percent"></i></button>
-        <button class="operator"><i class="fa-solid fa-divide"></i></button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="operator"><i class="fa-solid fa-xmark"></i></button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="operator"><i class="fa-solid fa-minus"></i></button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="operator"><i class="fa-solid fa-plus"></i></button>
-        <button>0</button>
-        <button>,</button>
+        <button class="operator">^</button>
+        <button class="operator">%</button>
+        <button class="operator">÷</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator">×</i></button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator">+</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
         <button class="eraseBtn">
           <i class="fa-solid fa-delete-left"></i>
         </button>
         <button class="equalsBtn"><i class="fa-solid fa-equals"></i></button>
       </div>
     </div>
-    <img src="1.jpg" />
+    <script src="script.js"></script>
   </body>
 </html>
