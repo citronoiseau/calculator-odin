@@ -9,7 +9,7 @@ function Calculator() {
     "*": (a, b) => a * b,
     "/": (a, b) => a / b,
   };
-  this.calculate = function (a, b, op) {
+  this.operate = function (a, b, op) {
     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
       return NaN;
     }
@@ -17,4 +17,4 @@ function Calculator() {
   };
 }
 let calculator = new Calculator();
-console.log(calculator.calculate(firstNum, secondNum, operator));
+console.log(calculator.operate(firstNum, secondNum, operator));
