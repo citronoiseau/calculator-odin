@@ -1,5 +1,11 @@
 body {
+  background: #9c9b5d url("../img/background.svg") center/cover no-repeat;
   font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #71361b;
 }
 .calculator {
   display: flex;
