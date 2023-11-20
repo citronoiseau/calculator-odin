@@ -68,18 +68,23 @@ i {
 .calculator button.clearBtn {
   background-color: #50471b;
 }
-
 .calculator button:active {
   border-radius: 10px;
+}
+.calculator button:active,
+.calculator button:hover {
   background-color: #4a4a4a53;
 }
-.calculator button.operator:active {
+.calculator button.operator:active,
+.calculator button.operator:hover {
   background-color: #896354c1;
 }
-.calculator button.equalsBtn:active {
+.calculator button.equalsBtn:active,
+.calculator button.equalsBtn:hover {
   background-color: rgba(166, 95, 62, 0.768);
 }
-.calculator button.clearBtn:active {
+.calculator button.clearBtn:active,
+.calculator button.clearBtn:hover {
   background-color: rgba(133, 118, 43, 0.755);
 }
 

@@ -12,7 +12,6 @@ const clearBtn = document.querySelector(`.clearBtn`);
 const eraseBtn = document.querySelector(`.eraseBtn`);
 
 function getNumber(number) {
-  console.log("Number:", number);
   if (cursorElement) {
     cursorElement.remove();
   }
@@ -30,10 +29,11 @@ numberBtns.forEach((button) =>
 
 function getOperator(op) {
   if (operator != null) getExpression();
-  console.log("Operator:", op);
   firstNum = parseFloat(currentOperation.textContent);
+  if (op === "-" && isNaN(firstNum)) {
+    currentOperation.textContent = `${op}`;
+  }
   if (isNaN(firstNum)) {
-    console.log("Invalid number");
     return;
   }
   operator = op;
@@ -51,7 +51,6 @@ operatorBtns.forEach((button) =>
 function getExpression() {
   secondNum = parseFloat(currentOperation.textContent);
   if (isNaN(secondNum)) {
-    console.log("Invalid number");
     return;
   }
   let result = calculator.operate(firstNum, secondNum, operator);
@@ -103,4 +102,3 @@ function Calculator() {
   };
 }
 let calculator = new Calculator();
-console.log(calculator.operate(firstNum, secondNum, operator));
