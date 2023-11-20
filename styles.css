@@ -87,7 +87,17 @@ i {
 .calculator button.clearBtn:hover {
   background-color: rgba(133, 118, 43, 0.755);
 }
-
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+.footer a {
+  color: #71361b;
+  transition: all 0.3s ease;
+}
+.footer a:hover {
+  color: #c26b43;
+}
 @keyframes cursorBlink {
   0% {
     opacity: 1;
