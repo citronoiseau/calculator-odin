@@ -53,7 +53,7 @@ function getExpression() {
   if (isNaN(secondNum)) {
     return;
   }
-  let result = calculator.operate(firstNum, secondNum, operator);
+  let result = roundNumber(calculator.operate(firstNum, secondNum, operator));
   currentOperation.textContent = result;
   previousOperation.textContent = ``;
   firstNum = result;
@@ -63,18 +63,24 @@ equalsBtn.addEventListener(`click`, getExpression);
 
 function erase() {
   const lastOperator = previousOperation.textContent.slice(-1);
-  if (["+", "-", "×", "÷", "^", "%"].includes(lastOperator)) {
+  if (!currentOperation.contains(cursorElement)) {
+    currentOperation.textContent = currentOperation.textContent.slice(0, -1);
+  }
+  if (
+    currentOperation.contains(cursorElement) &&
+    ["+", "-", "×", "÷", "^", "%"].includes(lastOperator)
+  ) {
     operator = null;
     previousOperation.textContent = previousOperation.textContent.slice(0, -1);
     currentOperation.textContent = previousOperation.textContent;
     previousOperation.textContent = ``;
   }
-  currentOperation.textContent = currentOperation.textContent.slice(0, -1);
   if (currentOperation.textContent === ``) {
     currentOperation.appendChild(cursorElement);
   }
 }
 eraseBtn.addEventListener(`click`, erase);
+
 function clearScreen() {
   firstNum = ``;
   secondNum = ``;
@@ -84,6 +90,10 @@ function clearScreen() {
   previousOperation.textContent = ``;
 }
 clearBtn.addEventListener(`click`, clearScreen);
+
+function roundNumber(number) {
+  return Math.round(number * 10) / 10;
+}
 
 function Calculator() {
   this.methods = {
