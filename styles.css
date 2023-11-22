@@ -1,5 +1,5 @@
 body {
-  background: #ffffed url("../img/background.svg") center/cover no-repeat;
+  background: #ffffed url("./img/background.svg") center/cover no-repeat;
   font-family: "Roboto", sans-serif;
 }
 
