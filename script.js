@@ -94,6 +94,37 @@ clearBtn.addEventListener(`click`, clearScreen);
 function roundNumber(number) {
   return Math.round(number * 10) / 10;
 }
+function keybordControls(event) {
+  const input = event.key;
+  if (!isNaN(input) || input === ".") {
+    getNumber(input);
+  }
+  let operator = isOperator(input);
+  if (operator) {
+    getOperator(operator);
+  }
+  if (input === "=" || input === "Enter") {
+    getExpression();
+  }
+  if (input === "Backspace") {
+    erase();
+  }
+  if (input === "Delete") {
+    clearScreen();
+  }
+}
+function isOperator(input) {
+  if (input === "/") {
+    input = "÷";
+  }
+  if (input === "*") {
+    input = "×";
+  }
+  if (["+", "-", "×", "÷", "^", "%"].includes(input)) {
+    return input;
+  }
+}
+document.addEventListener(`keydown`, keybordControls);
 
 function Calculator() {
   this.methods = {
