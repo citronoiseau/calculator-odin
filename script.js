@@ -18,6 +18,11 @@ function getNumber(number) {
   if (number === "." && currentOperation.textContent.includes(`.`)) {
     return;
   }
+  if (currentOperation.textContent.length >= 20) {
+  }
+  if (number === " ") {
+    return;
+  }
   currentOperation.textContent += number;
 }
 
@@ -112,6 +117,12 @@ function keybordControls(event) {
   if (input === "Delete") {
     clearScreen();
   }
+  if (input === " ") {
+    if (currentOperation.textContent === ``) {
+      currentOperation.appendChild(cursorElement);
+    }
+    return;
+  }
 }
 function isOperator(input) {
   if (input === "/") {
@@ -123,6 +134,7 @@ function isOperator(input) {
   if (["+", "-", "×", "÷", "^", "%"].includes(input)) {
     return input;
   }
+  return null;
 }
 document.addEventListener(`keydown`, keybordControls);
 
