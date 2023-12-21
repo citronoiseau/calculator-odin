@@ -33,6 +33,7 @@ h1 {
 }
 .previousOperation {
   font-size: 20px;
+  min-height: 2rem;
 }
 .currentOperation {
   font-size: 65px;
